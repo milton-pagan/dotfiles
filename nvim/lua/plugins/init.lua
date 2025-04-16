@@ -76,8 +76,8 @@ require("lazy").setup({
   {
     'neoclide/coc.nvim',
     branch = 'release',
-    build = 'npm ci',
-    event = 'InsertEnter',
+    build = 'npm install',
+    event = { 'InsertEnter', 'CmdlineEnter' },
   }
 })
 

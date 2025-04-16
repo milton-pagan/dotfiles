@@ -5,6 +5,7 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "a8912b88ce488f411177fc8aed358b04dc246d7b" },
   "cmp-path": { "branch": "main", "commit": "c6635aae33a50d6010bf1aa756ac2398a2d54c32" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
+  "coc.nvim": { "branch": "release", "commit": "993a4a273bf0415296a1a8d512466b183670568a" },
   "friendly-snippets": { "branch": "main", "commit": "31f2a2657b6261724313281fe0d8ba6f43f4a4fa" },
   "fzf": { "branch": "master", "commit": "66df24040fed3c76df545fc34b47387c86922786" },
   "fzf-checkout.vim": { "branch": "master", "commit": "db0289a6c8e77b08a0150627733722fd07d5fa62" },
