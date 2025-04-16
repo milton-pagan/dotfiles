@@ -66,9 +66,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 echo ">> Installing latest LTS version of Node.js..."
-nvm install --lts
-nvm use --lts
-nvm alias default 'lts/*'
+nvm install "lts/*"
+nvm use "lts/*"
+nvm alias default "lts/*"
 
 echo ">> Node version: $(node -v)"
 echo ">> npm version: $(npm -v)"
