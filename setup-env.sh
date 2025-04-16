@@ -82,8 +82,8 @@ cd "$DOTFILES_DIR"
 
 echo ">> Stowing config files..."
 stow --target="$HOME" tmux
-stow --target="$HOME/.config" nvim
-stow --target="$HOME/.config" fish
+stow --target="$HOME" nvim
+stow --target="$HOME" fish
 
 echo ">> Setting Fish as default shell..."
 if ! grep -q "$(which fish)" /etc/shells; then
