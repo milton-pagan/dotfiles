@@ -58,7 +58,7 @@ install_packages() {
       fish -c 'source ~/.config/fish/config.fish'
     fi
     brew update
-    brew install curl git tmux fish ripgrep neovim openssh stow coreutils fzf nvm
+    brew install curl git tmux fish ripgrep neovim openssh stow coreutils fzf
   elif [[ "$pkg_manager" == "apt" ]]; then
     sudo apt update
     sudo apt install -y curl git tmux fish ripgrep neovim openssh-client stow build-essential
@@ -75,21 +75,6 @@ if ask_yes_no ">> Do you want to install required packages?"; then
   install_packages "$PKG_MANAGER"
 else
   echo ">> Skipping package installation."
-fi
-
-if ask_yes_no ">> Do you want to install NVM and Node.js?"; then
-  if [ ! -d "$HOME/.nvm" ]; then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-  fi
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  nvm install "lts/*"
-  nvm use "lts/*"
-  nvm alias default "lts/*"
-  echo ">> Node version: $(node -v)"
-  echo ">> npm version: $(npm -v)"
-else
-  echo ">> Skipping Node.js installation."
 fi
 
 if ask_yes_no ">> Do you want to clone and stow dotfiles?"; then
@@ -116,10 +101,11 @@ else
   echo ">> Skipping default shell change."
 fi
 
-if ask_yes_no ">> Do you want to install Fisher (Fish plugin manager)?"; then
+if ask_yes_no ">> Do you want to install Fisher and plugins?"; then
   fish -c 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher'
+  fish -c 'fisher install jorgebucaran/nvm.fish'
 else
-  echo ">> Skipping Fisher install."
+  echo ">> Skipping Fisher and plugin install."
 fi
 
 if ask_yes_no ">> Do you want to configure Git?"; then
@@ -168,5 +154,5 @@ fi
 echo "\n✅ All done!"
 echo "→ Launch tmux and run <prefix> + I to install tmux plugins."
 echo "→ Open Neovim to trigger Lazy.nvim plugin installs."
-
+echo "→ Run 'nvm install lts' inside Fish to install Node.js."
 

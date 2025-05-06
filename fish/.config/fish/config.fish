@@ -1,6 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-
+    # Interactive session setup
     fish_vi_key_bindings
     set -Ux EDITOR nvim
     set -Ux VISUAL nvim
@@ -9,7 +8,8 @@ if status is-interactive
     alias vim="nvim"
 end
 
-# Conditional Homebrew setup for macOS only
+# Only run on macOS
 if test (uname) = "Darwin"
     eval "$(/opt/homebrew/bin/brew shellenv)"
 end
+
