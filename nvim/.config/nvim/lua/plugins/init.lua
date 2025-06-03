@@ -58,9 +58,9 @@ require("lazy").setup({
   { "godlygeek/tabular" },
 
   -- Language server setup (replacing coc.nvim)
-  { "neovim/nvim-lspconfig" },
-  { "williamboman/mason.nvim" },
-  { "williamboman/mason-lspconfig.nvim" },
+  -- { "neovim/nvim-lspconfig" },
+  -- { "williamboman/mason.nvim" },
+  --{ "williamboman/mason-lspconfig.nvim" },
 
   -- Autocompletion
   { "hrsh7th/nvim-cmp" },
